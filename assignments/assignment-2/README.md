@@ -1,4 +1,4 @@
-Yuzhong Chen Assignment 1
-02/09/2025
-Please read the text part for information basic and execute the second block for MLE part 1. Please run the third block for MLE part 2 and the last for linear regression.
-![discord](./discord.png)
+Yuzhong Chen Assignment 2
+
+02/28/2025
+All the content are in assignment-2.ipynb. Calculation for receptive field is at the botom.
