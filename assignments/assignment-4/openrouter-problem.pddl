@@ -1,35 +1,27 @@
-(define (problem route-code-request)
-  (:domain openrouter)
+(define (problem robot_problem)
+  (:domain robot)
+
   (:objects
-    deepseek-r1 free-model - model
-    or-provider            - provider
-    coding multilingual    - capability
-    user-account           - account
-    req1                   - request
+    l0 l1 l2 l3 l4 l5 l6 l7 l8 l9 - Location
   )
 
   (:init
-    ;; Model <– Provider
-    (provided-by deepseek-r1 or-provider)
-
-    ;; Capabilities
-    (supports deepseek-r1 coding)
-    (supports deepseek-r1 multilingual)
-
-    ;; Model specs
-    (= (model-context-limit deepseek-r1)    163840)
-    (= (model-cost-prompt deepseek-r1)       0.0)
-    (= (model-cost-completion deepseek-r1)   0.0)
-
-    ;; Account budget
-    (= (account-credit user-account)        0.10)
-
-    ;; Request requirements
-    (request-needs req1 coding)
-    (= (request-context-size req1)          2000)
-    (= (request-prompt-tokens req1)         1000)
-    (= (request-completion-tokens req1)     500)
+    ;; initial robot location
+    (robot_at l0)
+    ;; linear connections l0–l1, l1–l2, …, l8–l9
+    (connected l0 l1)
+    (connected l1 l2)
+    (connected l2 l3)
+    (connected l3 l4)
+    (connected l4 l5)
+    (connected l5 l6)
+    (connected l6 l7)
+    (connected l7 l8)
+    (connected l8 l9)
   )
 
-  (:goal (exists (?m - model) (routed req1 ?m)))
+  ;; goal: reach the last location
+  (:goal
+    (robot_at l9)
+  )
 )
