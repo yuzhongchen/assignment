@@ -1,0 +1,16 @@
+webdataset
+pymongo
+Pillow
+numpy
+sentence-transformers
+qdrant-client
+torch
+transformers
+torchvision
+torch
+openai
+ollama
+gradio
+ffmpeg-python
+nltk
+pyyaml
